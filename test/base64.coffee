@@ -13,6 +13,10 @@ describe "Base64", ->
   it "should work with utf-8", ->
     assert.equal Base64.encode("düder"), "ZMO8ZGVy"
 
+  it "should work with astral emojis", ->
+    assert.equal Base64.encode("🍔"), "7aC87b2U"
+    assert.equal Base64.decode("7aC87b2U"), "🍔"
+
   it "should decode long strings", ->
     encoded = """
       VE9ETwotLS0tCkJ1bmRsZWQgRGVwZW5kZW5jaWVzCi0gQnVpbGQgYnVuZGxl
