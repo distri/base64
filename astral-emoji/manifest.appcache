@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 1468797766121
+
+CACHE:
+index.html
+../astral-emoji.json
+
+
+NETWORK:
+https://*
+http://*
+*
