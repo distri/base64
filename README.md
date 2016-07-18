@@ -1,5 +1,6 @@
 Base64
 ======
 
-Just a wrapper over http://www.webtoolkit.info/ for encoding and decoding
-utf8 <=> base64.
+Base64 to UTF8 encoding and decoding, wrapping up 
+[TextEncoderLite](https://github.com/coolaj86/TextEncoderLite) and
+[base64-js](https://github.com/beatgammit/base64-js)
