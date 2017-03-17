@@ -1,4 +1,6 @@
 Base64 = require "../main"
+Base64Js = require "../lib/base64-js"
+{decoder:Decoder} = require "../lib/text-encoder"
 
 describe "Base64", ->
   it "should encode", ->
@@ -12,6 +14,13 @@ describe "Base64", ->
 
   it "should work with utf-8", ->
     assert.equal Base64.encode("düder"), "ZMO8ZGVy"
+
+  it "should work with astral emojis", ->
+    decoder = new Decoder('utf8')
+    result = decoder.decode(Base64Js.toByteArray("8J+NlAo="))
+    burger = "\uD83C\uDF54\n"
+
+    assert.equal result, burger
 
   it "should decode long strings", ->
     encoded = """
